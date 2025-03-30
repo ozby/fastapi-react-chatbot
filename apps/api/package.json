@@ -1,0 +1,12 @@
+{
+  "name": "api",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "test": "docker compose run --rm pytest",
+    "prepare": "docker compose exec web python -c \"import asyncio; from app.core.setup import create_tables; asyncio.run(create_tables())\"",
+    "start": "docker compose up -d",
+    "stop": "docker compose down",
+    "restart": "docker compose restart"
+  }
+}
